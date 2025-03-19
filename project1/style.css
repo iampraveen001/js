@@ -1,0 +1,174 @@
+:root {
+    --background: #101114;
+    --primary-color: #1C1D20;
+    --secondary-color: #4A4D57;
+    --accent-color: #00FFC4;
+    --text-color: #F9F9F9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+body {
+    min-height: 100vh;
+    padding: 10px;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+h1 {
+    margin: 100px 0 20px;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+/* Container */
+.receiver {
+    width: 700px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Input Field */
+#todo-input {
+    width: 100%;
+    padding: 12px 20px;
+    background: none;
+    border: 2px solid var(--secondary-color);
+    border-radius: 1000px;
+    font: inherit;
+    color: var(--text-color)  var(--background);
+    caret-color: var(--accent-color);
+}
+
+#todo-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+/* Form */
+form {
+    position: relative;
+}
+
+/* Add Button */
+#add-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 100%;
+    padding: 0 30px;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#add-button:hover {
+    background-color: #00d9a3;
+}
+
+/* To-Do Item */
+.todo {
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* To-Do Text */
+.todo .todo-text {
+    padding: 15px;
+    flex-grow: 1;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* Delete Button */
+.delete-button {
+    padding: 5px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-button svg {
+    transition: fill 200ms ease;
+}
+
+.delete-button:hover svg {
+    fill: #ff0033;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox {
+    background-color: var(--accent-color);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg {
+    fill: var(--primary-color);
+}
+
+input[type="checkbox"]:checked ~ .todo-text {
+    text-decoration: line-through;
+    color: var(--secondary-color);
+}
+/*mode changer*/
+.mode{
+margin:2.5rem;
+background-color:transparent;
+
+}
+/*btn */
+.mode-btn{
+    height:35px;
+    width:60px;
+    border-radius: 25%;
+    border-color:var(--text-color);
+    background-color:var(--accent-color);
+}
